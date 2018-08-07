@@ -1,7 +1,7 @@
 from keras.layers import Layer, Dense, InputSpec, Lambda, Input
 from keras import activations
 from keras import backend as K
-from keras import initializations
+from keras import initializers
 from keras import regularizers
 from keras import constraints
 import numpy as np
@@ -53,7 +53,7 @@ class Huffmax(Layer):
 			frequency_table = [1] * nb_classes
 		self.frequency_table = frequency_table
 		self.mode = mode
-		self.init = initializations.get(init)
+		self.init = initializers.get(init)
 		self.W_regularizer = regularizers.get(W_regularizer)
 		self.b_regularizer = regularizers.get(b_regularizer)
 		self.activity_regularizer = regularizers.get(activity_regularizer)
